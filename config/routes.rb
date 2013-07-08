@@ -1,10 +1,22 @@
 MiaApp::Application.routes.draw do
-  get "static_pages/about"
+  get "users/new"
 
-  get "static_pages/home"
+ root to: 'static_pages#home'
+#con le istruzioni sotto faccio un alias che lega la pagina (es./about) con la sua reale posizione passando al controller(static_pages) l'argomento about
+  match '/about', to: 'static_pages#about'
+  #con il comando sotto devo togliere la index di defoult sotto public/index.html
+  match '/', to: 'static_pages#home'
+  #inserire il comando match genera delle variabili con nome_match_path globali
+  match '/help', to: 'static_pages#help'
+  match '/contact', to: 'static_pages#contact'
+  match '/signup', to: 'users#new'
+ 
+ #equivalente a sopra get "static_pages/home"
 
-  get "static_pages/help"
+  #get "static_pages/help"
 
+  #get "static_pages/contact"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
