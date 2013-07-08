@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
+
 gem 'rails', '3.2.0'
+
+#gemfile per i css twitter-style
+gem 'bootstrap-sass', '2.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
